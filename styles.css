@@ -1,0 +1,14 @@
+@font-face {
+    font-family: AmazDooMLeft;
+    src: url(amazdoom/AmazDooMLeft.ttf);
+}
+Body {background-color : #050505;}
+*{margin-top:0; margin-bottom:0;}
+h1{ font-size: 7vw;
+    font-family: AmazDooMLeft;
+    letter-spacing: 0.1em;
+    color: rgb(238, 0, 0);
+text-align:  center;}
+
+#img{ width: 30%;}
+#Imagen{text-align: center;}

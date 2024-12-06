@@ -11,7 +11,7 @@ h1{ font-size: 7vw;
 text-align:  center;}
 
 #img{ 
-    width: 80%;
+    height: 80%;
   }
 @media (min-width: 600px) {
 #img {

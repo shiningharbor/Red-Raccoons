@@ -13,7 +13,7 @@ text-align:  center;}
 #img{ 
     height: 80%;
   }
-@media (min-width: 600px) {
+@media (min-width: 1000px) {
 #img {
     width: 30%;
     }

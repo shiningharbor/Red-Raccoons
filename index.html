@@ -1,14 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="Red Raccoons" content="width=device-width, initial-scale=1.0">
-    <title>Red Raccoons</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web Responsiva</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1 id="Nombre" class="title">RED RACCOONS</h1>
-    <div id="Imagen"><img id="img" src="Red_Raccoons.jpg" /></div>
-    <h1 id="Proximamente" class="title">PROXIMAMENTE</h1>
+
+<!-- Sección de fondo con imagen fija -->
+<div class="bg-image">
+    <div class="container content text-center">
+        <h1>Bienvenidos a nuestra página</h1>
+        <div class="band-description">
+            <p>Somos una banda apasionada por la música y el arte. Cada uno de nosotros trae algo único a nuestra propuesta sonora, buscando siempre innovar y conectar con nuestro público. Nuestra música es un reflejo de nuestras experiencias, y estamos emocionados de compartirlas con todos ustedes.</p>
+        </div>
+        
+        <p>Selecciona un integrante para ver su información</p>
+
+        <!-- Menú de integrantes -->
+        <div class="btn-group">
+            <button type="button" id="member1-btn">Abraham (Tecladista)</button>
+            <button type="button" id="member2-btn">Emilio (Guitarrista)</button>
+            <button type="button" id="member3-btn">Emiliano (Bajista)</button>
+            <button type="button" id="member4-btn">Ivan (Baterista)</button>
+        </div>
+
+        <!-- Información de los integrantes -->
+        <div id="member1-info" class="profile-info">
+            <h3>Abraham (Tecladista)</h3>
+            <p>Descripción del integrante 1.</p>
+        </div>
+        <div id="member2-info" class="profile-info">
+            <h3>Emilio (Guitarrista)</h3>
+            <p>Descripción del integrante 2.</p>
+        </div>
+        <div id="member3-info" class="profile-info">
+            <h3>Emiliano (Bajista)</h3>
+            <p>Descripción del integrante 3.</p>
+        </div>
+        <div id="member4-info" class="profile-info">
+            <h3>Ivan (Baterista)</h3>
+            <p>Descripción del integrante 4.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Pie de página -->
+<div class="footer">
+    <a href="https://www.instagram.com/red_raccoons/" target="_blank" id="instagram-btn">Síguenos en Instagram</a>
+</div>
+
+<!-- Enlace a los scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Script personalizado para manejar la información de los integrantes -->
+<script>
+    // Función para mostrar la información del integrante seleccionado
+    $(document).ready(function() {
+        // Al hacer clic en los botones de integrantes
+        $("#member1-btn").click(function() {
+            $(".profile-info").removeClass("active");
+            $("#member1-info").addClass("active");
+        });
+
+        $("#member2-btn").click(function() {
+            $(".profile-info").removeClass("active");
+            $("#member2-info").addClass("active");
+        });
+
+        $("#member3-btn").click(function() {
+            $(".profile-info").removeClass("active");
+            $("#member3-info").addClass("active");
+        });
+        $("#member4-btn").click(function() {
+            $(".profile-info").removeClass("active");
+            $("#member4-info").addClass("active");
+        });
+    });
+</script>
+
 </body>
 </html>

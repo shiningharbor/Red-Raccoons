@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "doom_font";
+  src: url("/fonts/AmazDooMLeft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.doom-font {
+  font-family: "doom_font", sans-serif;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+}

@@ -24,7 +24,7 @@ export default function Main() {
         switch (step) {
             case 0: return <Inicio setStep={setStep} />;
             case 1: return <BandPage setStep={setStep} />;
-            case 2: return <Inicio setStep={setStep} />;
+            case 2: return <Fechas setStep={setStep} />;
             case 3: return <Momentos />;
             case 4: return <Fechas setStep={setStep} />;
             case 5: return <Contact setStep={setStep} />;

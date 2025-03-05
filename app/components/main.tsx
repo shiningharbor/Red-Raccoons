@@ -35,7 +35,7 @@ export default function Main() {
     return (
         <div className="min-h-screen bg-red-500 flex flex-col">
             {/* Encabezado */}
-            <header className="w-full bg-black text-red-500 p-4 flex items-center justify-between relative">
+            <header className="w-full bg-black text-red-500 p-4 flex items-center relative z-50">
                 {/* Logo alineado a la izquierda */}
                 <img
                     src="/red.png"
@@ -43,33 +43,44 @@ export default function Main() {
                     className="w-10 h-10 object-cover"
                 />
 
+                {/* Menú en computadoras: Centrado */}
+                <div className="hidden md:flex flex-1 justify-center space-x-4">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            className={`px-4 py-2 font-formaDisplay ${step === tab.id ? "underline" : ""}`}
+                            onClick={() => setStep(tab.id)}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
+
                 {/* Botón hamburguesa (solo en móviles) */}
                 <button
-                    className="md:hidden text-3xl"
+                    className="md:hidden text-3xl ml-auto"
                     onClick={() => setMenuOpen(!menuOpen)}
                 >
                     ☰
                 </button>
 
-                {/* Menú de pestañas */}
-                <nav 
-                    className={`absolute top-16 left-0 w-full bg-black text-red-500 shadow-md md:static md:shadow-none md:flex md:space-x-4 transition-all duration-300 z-50 ${menuOpen ? "block" : "hidden"}`}
-                >
-                    <div className="flex flex-col md:flex-row">
+                {/* Menú desplegable en móviles */}
+                {menuOpen && (
+                    <nav className="absolute top-full left-0 w-full bg-black text-red-500 shadow-md flex flex-col items-center z-50">
                         {tabs.map((tab) => (
                             <button
                                 key={tab.id}
-                                className={`block w-full text-center px-4 py-2 md:inline md:w-auto font-formaDisplay ${step === tab.id ? "underline" : ""}`}
+                                className="w-full px-4 py-2 text-center hover:bg-gray-800"
                                 onClick={() => { 
                                     setStep(tab.id); 
-                                    setMenuOpen(false); // Cierra el menú al hacer clic
+                                    setMenuOpen(false); // Cierra el menú
                                 }}
                             >
                                 {tab.label}
                             </button>
                         ))}
-                    </div>
-                </nav>
+                    </nav>
+                )}
             </header>
 
             {/* Contenido dinámico en el main */}

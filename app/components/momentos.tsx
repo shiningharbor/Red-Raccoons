@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -24,12 +24,12 @@ export default function Momentos() {
   };
 
   return (
-    <div className="relative flex flex-col flex-1 w-full bg-cover bg-center"> 
+    <div className="relative flex flex-col flex-1 w-full bg-cover bg-center">
       {/* Contenedor fijo para los videos */}
       <div className="w-full max-w-[800px] aspect-video bg-black flex items-center justify-center overflow-hidden rounded-lg shadow-lg mx-auto">
         <Swiper
           ref={swiperRef} // Asigna la referencia al Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation, Pagination]}
           navigation
           pagination={{ clickable: true }}
           loop
@@ -41,7 +41,7 @@ export default function Momentos() {
               <div className="w-full h-full flex items-center justify-center relative">
                 <video
                   controls
-                  className="max-w-full max-h-full object-contain absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  className="max-w-full max-h-full object-contain absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
                 >
                   <source src={file.url} type="video/mp4" />
                   Tu navegador no soporta videos.

@@ -161,8 +161,8 @@ body:has(.home-hero) { background: var(--paper); }
 .vinyl-area { height: 680px; position: relative; display: grid; place-items: center; }
 .vinyl-disc { width: min(51vw, 740px); aspect-ratio: 1; background: repeating-radial-gradient(circle at center, #101011 0px, #101011 3px, #282627 4px, #0b0b0c 6px, #121212 8px); border: 6px solid #090909; border-radius: 50%; box-shadow: 30px 35px 0 #00000024, 0 0 0 2px #fff4 inset; position: relative; animation: rotate-slow 33s linear infinite; display: grid; place-items: center; transform-origin: center; }
 .vinyl-disc::before { content: ""; width: 92%; height: 92%; position: absolute; border: 1px solid #7774; border-radius: 50%; }
-.vinyl-label { width: 30%; height: 30%; display: grid; place-items: center; background: #f0e8dd; border-radius: 50%; border: 13px solid var(--red); box-shadow: 0 0 0 4px #101010; }
-.vinyl-label img { width: 83%; height: auto; }
+.vinyl-label { width: 30%; height: 30%; display: grid; place-items: center; background: #000000; border-radius: 50%; border: 13px solid var(--red); box-shadow: 0 0 0 4px #101010; }
+.vinyl-label img { width: 100%; height: auto; }
 .vinyl-label::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--ink); position: absolute; }
 .vinyl-caption { position: absolute; right: -4%; bottom: 4%; transform: rotate(-90deg); font-size: 10px; font-weight: 900; letter-spacing: .13em; }
 .vinyl-spark { position: absolute; font-size: 100px; top: 0; left: 10px; color: var(--paper); line-height: .8; }
@@ -549,4 +549,21 @@ body:has(.home-hero) { background: var(--paper); }
     padding-top: 35px;
     padding-bottom: 75px;
   }
+}
+
+
+
+/* Corrección de proporción del logo en Fechas */
+
+.poster-stamp {
+  width: 200px;
+  height: auto;
+  aspect-ratio: 438 / 346;
+}
+
+.poster-stamp img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
 }

@@ -12,7 +12,22 @@ export default function FechasPage() {
         <div className="concert-poster">
           <span className="poster-top"><span>RED RACCOONS</span><span>EN VIVO</span></span>
           <h1>PRÓXIMAS<br /><em>FECHAS</em></h1>
-          <div className="poster-stamp"><Image src="/Red_Raccoons.png" width={198} height={156} alt="" /></div>
+
+          <div className="poster-stamp">
+            <Image
+              src="/Red_Raccoons.png"
+              width={438}
+              height={346}
+              alt="Red Raccoons"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          </div>
+
           <div className="poster-center"><span className="poster-burst" aria-hidden="true">✳</span><strong>POR<br />ANUNCIAR</strong><span className="poster-burst" aria-hidden="true">✳</span></div>
           <div className="poster-bottom"><span>RED RACCOONS</span><span>PRÓXIMAMENTE</span></div>
         </div>

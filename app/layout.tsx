@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     images: [{ url: "/Red_Raccoons.png", width: 1096, height: 1096, alt: "Red Raccoons" }],
   },
   robots: { index: true, follow: true },
+    icons: {
+    icon: "/red.png?v=2",
+    shortcut: "/red.png?v=2",
+    apple: "/red.png?v=2",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

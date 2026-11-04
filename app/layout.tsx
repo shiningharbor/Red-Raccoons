@@ -1,33 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import SiteHeader from "./components/site-header";
+import SiteFooter from "./components/site-footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Red Raccoons",
-  description: "¿Banda de Rock?",
+  metadataBase: new URL("https://red-raccoons.com"),
+  title: {
+    default: "Red Raccoons | Sitio oficial",
+    template: "%s | Red Raccoons",
+  },
+  description:
+    "Red Raccoons: conoce a la banda, nuestros momentos en vivo, próximas fechas y cómo contactarnos.",
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    siteName: "Red Raccoons",
+    images: [{ url: "/Red_Raccoons.jpg", width: 1096, height: 1096, alt: "Red Raccoons" }],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="es">
+      <body>
+        <a className="skip-link" href="#contenido">Saltar al contenido</a>
+        <SiteHeader />
+        <main id="contenido">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Red Raccoons — Sitio rediseñado
 
-## Getting Started
+Sitio web en Next.js App Router (15) y React 19, con identidad visual en negro, rojo y tonos neutros. Se conservó el logo original de `public/red.png` y las imágenes/contenido existentes.
 
-First, run the development server:
+## Iniciar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para validar la versión de producción:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Páginas y URLs
 
-To learn more about Next.js, take a look at the following resources:
+- `/` — portada editorial
+- `/integrantes` — fotografías de los cuatro integrantes; selecciona una fotografía o nombre para desplegar su descripción y enlace a Instagram
+- `/musica` — sección musical (próximamente)
+- `/momentos` — galería de videos con reproductor
+- `/fechas` — póster de próximas fechas (sin inventar fechas)
+- `/contrataciones` — contacto vía Instagram
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Importante:** ahora cada sección es una ruta real, no un cambio de estado dentro de `/`. Abrir una URL directamente, actualizarla o compartirla funciona como se espera en Next.js. Los enlaces del menú usan `next/link`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Actualizar contenido
 
-## Deploy on Vercel
+- **Integrantes**: `app/lib/content.ts` (`members`), con fotografías, presentaciones personales y redes de cada uno. Las descripciones se abren al seleccionar el perfil.
+- **Galería inicial**: `app/lib/content.ts` (`originalMoments`), con tres videos originales. Abre cada tarjeta para reproducirla.
+- **Galería automática opcional**: llena `.env.local` basándote en `.env.example` y agrega videos o imágenes a la carpeta `Red-Raccoons/Momentos/` de Cloudinary. El endpoint `/api/cloudinary` trae recursos adicionales (sin duplicados por URL). Si no se configuran credenciales, los videos originales siguen disponibles.
+- **Fechas**: se mantiene “Por anunciar” porque no se proporcionaron eventos confirmados. Cuando existan, actualiza `app/fechas/page.tsx`.
+- **Contacto**: se conserva el perfil Instagram original; no se inventa teléfono ni correo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Ajuste de textos (versión actual)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Se mantuvo el diseño de la primera versión y se cambió únicamente la redacción y la presentación de las fichas. La portada usa la presentación y el párrafo facilitados por Red Raccoons. Se eliminaron las frases promocionales que no reflejaban la voz de la banda, por ejemplo "Venimos a hacer ruido" y "The Gang".
+
+- **Portada**: `app/page.tsx`.
+- **Bios, instrumentos e Instagram**: `app/lib/content.ts`.
+- **Música, Momentos, Fechas, Contacto**: `app/musica/page.tsx`, `app/momentos/page.tsx`, `app/fechas/page.tsx`, `app/contrataciones/page.tsx`.
+- **Pie y menú**: `app/components/site-footer.tsx`, `app/components/site-header.tsx`.
+- **Nombres de videos**: `app/lib/content.ts` (nombres neutrales: Video 01, 02, 03).
+
+Los textos descriptivos y la estructura del sitio pueden editarse sin cambiar las imágenes, colores o rutas. Las fechas siguen sin añadirse hasta que se confirmen.
+
+## Identidad y diseño
+
+El branding negro / rojo original se mantiene. Cada página tiene su propio lenguaje visual: portada tipográfica, fichas de integrantes, vinilo musical, galería de momentos, póster de concierto y contacto de alto impacto. El CSS está organizado por secciones en `app/globals.css`. Incluye diseño adaptable, navegación móvil, estados `:focus-visible`, animaciones moderadas y compatibilidad con `prefers-reduced-motion`.
+
+## Publicación en red-raccoons.com
+
+Sube este proyecto al hosting que hoy sirve el dominio (por ejemplo Vercel), ejecuta el build y despliega. **El cambio de URLs no requiere cambiar el dominio**: tu dominio seguirá siendo `red-raccoons.com` y Next.js atenderá las rutas `/momentos`, `/fechas`, etc. Verifica en tu hosting que todas las rutas se deleguen a Next.js (no a un HTML estático antiguo).

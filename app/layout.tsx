@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
     icons: {
-    icon: "/red.png?v=2",
-    shortcut: "/red.png?v=2",
-    apple: "/red.png?v=2",
+    icon: "/Red_Raccoons.png?v=2",
+    shortcut: "/Red_Raccoons.png?v=2",
+    apple: "/Red_Raccoons.png?v=2",
   },
 };
 

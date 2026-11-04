@@ -39,7 +39,7 @@ export default function Home() {
       <section className="home-feature">
         <div className="shell feature-grid">
           <div className="feature-art">
-            <div className="feature-art-disc"><Image src="/Red_Raccoons.jpg" alt="Emblema de Red Raccoons" fill sizes="(max-width: 850px) 80vw, 480px" /></div>
+            <div className="feature-art-disc"><Image src="/Red_Raccoons.png" alt="Emblema de Red Raccoons" fill sizes="(max-width: 850px) 80vw, 480px" /></div>
             <span className="feature-corner">RED RACCOONS</span>
           </div>
           <div className="feature-copy">

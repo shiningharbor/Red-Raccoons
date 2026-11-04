@@ -567,3 +567,35 @@ body:has(.home-hero) { background: var(--paper); }
   object-fit: contain !important;
   display: block;
 }
+
+
+/* CORRECCIÓN HOME HERO — MÓVIL */
+
+@media (max-width: 650px) {
+
+  .home-hero-inner {
+    justify-content: flex-start;
+  }
+
+  .hero-wordmark {
+    margin-top: 55px;
+    margin-left: 0;
+    font-size: 18vw;
+    line-height: 0.78;
+    letter-spacing: -0.105em;
+    width: 100%;
+  }
+
+  .hero-wordmark > span:nth-child(2) {
+    margin-top: 12px;
+    font-size: 0.84em;
+  }
+
+  .hero-mascot {
+    top: 41%;
+  }
+
+  .hero-bottom {
+    margin-top: auto;
+  }
+}

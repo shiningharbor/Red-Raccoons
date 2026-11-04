@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_MX",
     siteName: "Red Raccoons",
-    images: [{ url: "/Red_Raccoons.jpg", width: 1096, height: 1096, alt: "Red Raccoons" }],
+    images: [{ url: "/Red_Raccoons.png", width: 1096, height: 1096, alt: "Red Raccoons" }],
   },
   robots: { index: true, follow: true },
 };
